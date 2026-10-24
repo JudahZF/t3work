@@ -159,6 +159,11 @@ export const PullRequestComment = Schema.Struct({
   reviewState: Schema.NullOr(Schema.String),
   reactions: Schema.optional(Schema.Array(PullRequestReaction)),
   canEdit: Schema.optional(Schema.Boolean),
+  /**
+   * False where the host takes no reaction on this remark even though it takes them on others,
+   * such as Cursor Origin's review summaries. Absent leaves it to `capabilities.reactions`.
+   */
+  canReact: Schema.optional(Schema.Boolean),
 });
 export type PullRequestComment = typeof PullRequestComment.Type;
 
@@ -177,6 +182,8 @@ export const PullRequestThreadComment = Schema.Struct({
   url: Schema.NullOr(Schema.String),
   reactions: Schema.optional(Schema.Array(PullRequestReaction)),
   canEdit: Schema.optional(Schema.Boolean),
+  /** As on `PullRequestComment`. */
+  canReact: Schema.optional(Schema.Boolean),
 });
 export type PullRequestThreadComment = typeof PullRequestThreadComment.Type;
 

@@ -1,7 +1,7 @@
 # Source control
 
-T3 Code integrates with GitHub, GitLab, Forgejo, Gitea, Bitbucket, Azure DevOps, and GitCafe to clone
-and publish repositories, create pull requests, and review changes.
+T3 Code integrates with GitHub, GitLab, Forgejo, Gitea, Bitbucket, Azure DevOps, GitCafe, and
+Cursor Origin to clone and publish repositories, create pull requests, and review changes.
 
 ## Review turn changes
 
@@ -118,6 +118,22 @@ sent to `git.cafe`; `CAFE_TOKEN` follows `CAFE_HOST` if you set it. Repositories
 
 Line comments, reviewer requests, and labels are not available for GitCafe pull requests yet.
 Merging a stack lands it through GitCafe, and updating a branch restacks the layers above it.
+
+### Cursor Origin
+
+Install the [Origin CLI (`origin`)](https://cursor.com/docs/origin) on the server and sign in:
+
+```bash
+origin auth login
+```
+
+T3 Code uses the CLI's sign-in and stores no Origin token. Origin repositories are never public,
+so publishing to Origin creates a private repository.
+
+Origin pull requests appear on the pull request page, with search, labels, reviewer requests,
+reactions on comments, auto-merge, and stacks. A stacked pull request merges from its stack menu,
+because merging it also lands the layers below; restacking stays with `origin stack restack`.
+Origin has no rebase merge or branch update.
 
 ## Start, clone, or publish a project
 
@@ -241,9 +257,10 @@ running count. A tick belongs to the pull request rather than to a commit, so sc
 single commit keeps them. A file pushed to after you cleared it comes back marked **Changed**.
 
 On GitHub these are GitHub's own viewed marks, so a review carries between T3 Code and github.com
-in either direction. Forgejo, GitLab, Bitbucket, and Azure DevOps expose no record T3 Code can read, so the
-server you are connected to keeps them instead: they follow you across the apps connected to that
-server, but the host's own site will not show them, and the count reads **viewed in T3 Code**.
+in either direction. Forgejo, GitLab, Bitbucket, Azure DevOps, and Cursor Origin expose no record
+T3 Code can read, so the server you are connected to keeps them instead: they follow you across
+the apps connected to that server, but the host's own site will not show them, and the count
+reads **viewed in T3 Code**.
 
 On mobile, open a changed file and mark it viewed from its header. Viewed files collapse,
 and their marks follow the same rules as on web and desktop.

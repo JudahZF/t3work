@@ -243,11 +243,12 @@ function ConversationCard({
               onClick={() => setEditing(true)}
             />
           ) : null}
-          {reactions.canReact || event.reactions.length > 0 ? (
+          {(reactions.canReact && event.comment?.canReact !== false) ||
+          event.reactions.length > 0 ? (
             <PullRequestReactionBar
               className="ml-auto justify-end"
               reactions={event.reactions}
-              canReact={reactions.canReact}
+              canReact={reactions.canReact && event.comment?.canReact !== false}
               subjectId={event.id}
               environmentId={reactions.environmentId}
               reference={reactions.reference}
@@ -601,11 +602,11 @@ function ReviewVerdictEvent({
             </PullRequestMetaLine>
           </div>
         </div>
-        {reactions.canReact || event.reactions.length > 0 ? (
+        {(reactions.canReact && event.comment?.canReact !== false) || event.reactions.length > 0 ? (
           <PullRequestReactionBar
             className="ml-auto justify-end"
             reactions={event.reactions}
-            canReact={reactions.canReact}
+            canReact={reactions.canReact && event.comment?.canReact !== false}
             subjectId={event.id}
             environmentId={reactions.environmentId}
             reference={reactions.reference}

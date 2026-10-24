@@ -1,0 +1,36 @@
+{
+  "pullRequest": {
+    "id": "pr_01m52s0559fqxsq5fz74j78t8z",
+    "number": "1",
+    "repository": {
+      "id": "r_01m52rzk0pfnn9eqkgt7pq2mat",
+      "name": "demo",
+      "owner": {
+        "slug": "ada",
+        "id": "ns_01m3s1c460e4ftz6x5ff46ayk7",
+        "type": "user"
+      }
+    }
+  },
+  "verdict": "mergeable",
+  "blockers": [],
+  "evaluatedPullRequests": [
+    {
+      "id": "pr_01m52s0559fqxsq5fz74j78t8z",
+      "number": "1",
+      "repository": {
+        "id": "r_01m52rzk0pfnn9eqkgt7pq2mat",
+        "name": "demo",
+        "owner": {
+          "slug": "ada",
+          "id": "ns_01m3s1c460e4ftz6x5ff46ayk7",
+          "type": "user"
+        }
+      }
+    }
+  ],
+  "headSha": "742e3e59c256e0d6205943cce4d88b5ba3279683",
+  "baseRef": "main",
+  "baseSha": "be71b0b72eb14bfb59238a34edb185d006422ef6",
+  "evaluatedAt": "2026-10-16T16:50:36.180Z"
+}

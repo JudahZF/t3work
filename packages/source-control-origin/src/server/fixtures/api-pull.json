@@ -1,0 +1,44 @@
+{
+  "id": "pr_01m52s0559fqxsq5fz74j78t8z",
+  "number": "1",
+  "state": "open",
+  "draft": false,
+  "merged": false,
+  "title": "Smoke PR one",
+  "body": "body text\n",
+  "head": {
+    "ref": "feat/one",
+    "sha": "742e3e59c256e0d6205943cce4d88b5ba3279683"
+  },
+  "base": {
+    "ref": "main",
+    "sha": "d54a724ec685c7a27ee3a36d2ebabee7b033cebf"
+  },
+  "author": {
+    "user": {
+      "id": "user_01ada00000000000000000000",
+      "email": "ada@example.com",
+      "displayName": "Ada Lovelace",
+      "handle": "ada"
+    }
+  },
+  "createdAt": "2026-10-16T16:33:52.809Z",
+  "updatedAt": "2026-10-16T16:33:52.809Z",
+  "mergeCommitSha": "",
+  "additions": 1,
+  "deletions": 0,
+  "changedFiles": 1,
+  "labels": [],
+  "webUrl": "https://cursor.com/codebase/ada/demo/pull/1",
+  "version": {
+    "number": "1",
+    "headSha": "742e3e59c256e0d6205943cce4d88b5ba3279683",
+    "baseSha": "d54a724ec685c7a27ee3a36d2ebabee7b033cebf",
+    "createdAt": "2026-10-16T16:33:52.814Z",
+    "potentialMergeCommit": {
+      "state": "prepared",
+      "sha": "e5b61bef27a96508066b0cb1659a4a0285ba549a",
+      "baseSha": "d54a724ec685c7a27ee3a36d2ebabee7b033cebf"
+    }
+  }
+}

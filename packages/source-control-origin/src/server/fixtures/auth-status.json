@@ -1,0 +1,13 @@
+{
+  "authenticated": true,
+  "authMethod": "login",
+  "source": "stored",
+  "endpoint": "https://api2.cursor.sh",
+  "tokenValid": true,
+  "account": {
+    "email": "ada@example.com",
+    "publicUserId": "user_01ada00000000000000000000",
+    "userId": 100001
+  },
+  "teams": []
+}

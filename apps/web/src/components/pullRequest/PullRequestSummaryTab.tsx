@@ -546,7 +546,7 @@ export function PullRequestSummaryTab({
     <PullRequestReactionBar
       className="ml-auto justify-end"
       reactions={comment.reactions ?? []}
-      canReact={detail.capabilities.reactions === true}
+      canReact={detail.capabilities.reactions === true && comment.canReact !== false}
       subjectId={comment.id}
       environmentId={environmentId}
       reference={reference}

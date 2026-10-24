@@ -1,0 +1,12 @@
+{
+  "number": 3,
+  "title": "Smoke merged",
+  "headRef": "feat/merged",
+  "baseRef": "main",
+  "status": "merged",
+  "url": "https://cursor.com/codebase/ada/demo/pull/3",
+  "headSha": "3d5b26766d36913f9f4ee9e92fc86f95a2f4b19c",
+  "updatedAt": "2026-10-16T16:45:13Z",
+  "closedAt": null,
+  "mergedAt": "2026-10-16T16:45:13Z"
+}

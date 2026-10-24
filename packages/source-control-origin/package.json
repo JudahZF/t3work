@@ -1,0 +1,51 @@
+{
+  "name": "@t3tools/source-control-origin",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./client/definition": {
+      "types": "./src/client/definition.ts",
+      "import": "./src/client/definition.ts"
+    },
+    "./server/driver": {
+      "types": "./src/server/driver.ts",
+      "import": "./src/server/driver.ts"
+    },
+    "./server/OriginCli": {
+      "types": "./src/server/OriginCli.ts",
+      "import": "./src/server/OriginCli.ts"
+    },
+    "./server/originJson": {
+      "types": "./src/server/originJson.ts",
+      "import": "./src/server/originJson.ts"
+    },
+    "./server/OriginPullRequestProvider": {
+      "types": "./src/server/OriginPullRequestProvider.ts",
+      "import": "./src/server/OriginPullRequestProvider.ts"
+    },
+    "./server/originPullRequestJson": {
+      "types": "./src/server/originPullRequestJson.ts",
+      "import": "./src/server/originPullRequestJson.ts"
+    },
+    "./server/OriginSourceControlProvider": {
+      "types": "./src/server/OriginSourceControlProvider.ts",
+      "import": "./src/server/OriginSourceControlProvider.ts"
+    }
+  },
+  "scripts": {
+    "typecheck": "tsc-rs --noEmit",
+    "test": "vp test run --config ../../vite.config.ts --dir ."
+  },
+  "dependencies": {
+    "@t3tools/contracts": "workspace:*",
+    "@t3tools/shared": "workspace:*",
+    "@t3tools/source-control-core": "workspace:*",
+    "effect": "catalog:"
+  },
+  "devDependencies": {
+    "@effect/vitest": "catalog:",
+    "@t3tools/source-control-testing": "workspace:*",
+    "@types/node": "catalog:",
+    "vite-plus": "catalog:"
+  }
+}

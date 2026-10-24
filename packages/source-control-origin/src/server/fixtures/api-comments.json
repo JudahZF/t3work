@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "id": "cmt_01m52s0kbne6bstq2syzqv6771",
+      "thread": {
+        "id": "cth_01m52s0kbfer2aqc6td35zcm8n",
+        "version": {
+          "number": "1",
+          "headSha": "742e3e59c256e0d6205943cce4d88b5ba3279683",
+          "baseSha": "d54a724ec685c7a27ee3a36d2ebabee7b033cebf"
+        },
+        "path": "",
+        "side": "PULL_REQUEST_COMMENT_SIDE_UNSPECIFIED",
+        "startLine": 0,
+        "endLine": 0,
+        "resolvedAt": "2026-10-16T16:54:42.403Z",
+        "createdAt": "2026-10-16T16:34:07.341Z",
+        "updatedAt": "2026-10-16T16:54:42.403Z"
+      },
+      "body": "A smoke comment",
+      "author": {
+        "user": {
+          "id": "user_01ada00000000000000000000",
+          "email": "ada@example.com",
+          "displayName": "Ada Lovelace",
+          "handle": "ada"
+        }
+      },
+      "createdAt": "2026-10-16T16:34:07.349Z",
+      "updatedAt": "2026-10-16T16:34:07.347Z",
+      "reactions": []
+    },
+    {
+      "id": "cmt_01m52t68wcetmrfvvb93508pvr",
+      "thread": {
+        "id": "cth_01m52s0kbfer2aqc6td35zcm8n",
+        "version": {
+          "number": "1",
+          "headSha": "742e3e59c256e0d6205943cce4d88b5ba3279683",
+          "baseSha": "d54a724ec685c7a27ee3a36d2ebabee7b033cebf"
+        },
+        "path": "",
+        "side": "PULL_REQUEST_COMMENT_SIDE_UNSPECIFIED",
+        "startLine": 0,
+        "endLine": 0,
+        "resolvedAt": "2026-10-16T16:54:42.403Z",
+        "createdAt": "2026-10-16T16:34:07.341Z",
+        "updatedAt": "2026-10-16T16:54:42.403Z"
+      },
+      "body": "a reply",
+      "author": {
+        "user": {
+          "id": "user_01ada00000000000000000000",
+          "email": "ada@example.com",
+          "displayName": "Ada Lovelace",
+          "handle": "ada"
+        }
+      },
+      "createdAt": "2026-10-16T16:54:41.804Z",
+      "updatedAt": "2026-10-16T16:54:41.802Z",
+      "reactions": []
+    },
+    {
+      "id": "cmt_01m52t72n3ezxbnr3y0d7k5tj8",
+      "thread": {
+        "id": "cth_01m52t72mxega9rfrjb65xxvp5",
+        "version": {
+          "number": "1",
+          "headSha": "742e3e59c256e0d6205943cce4d88b5ba3279683",
+          "baseSha": "d54a724ec685c7a27ee3a36d2ebabee7b033cebf"
+        },
+        "path": "README.md",
+        "side": "right",
+        "startLine": 2,
+        "endLine": 0,
+        "createdAt": "2026-10-16T16:55:08.188Z",
+        "updatedAt": "2026-10-16T16:55:08.188Z"
+      },
+      "body": "Why this line?",
+      "author": {
+        "user": {
+          "id": "user_01ada00000000000000000000",
+          "email": "ada@example.com",
+          "displayName": "Ada Lovelace",
+          "handle": "ada"
+        }
+      },
+      "createdAt": "2026-10-16T16:55:08.195Z",
+      "updatedAt": "2026-10-16T16:55:08.194Z",
+      "reactions": []
+    }
+  ],
+  "pullRequest": {
+    "id": "pr_01m52s0559fqxsq5fz74j78t8z",
+    "number": "1",
+    "repository": {
+      "id": "r_01m52rzk0pfnn9eqkgt7pq2mat",
+      "name": "demo",
+      "owner": {
+        "slug": "ada",
+        "id": "ns_01m3s1c460e4ftz6x5ff46ayk7",
+        "type": "user"
+      }
+    }
+  },
+  "nextPageToken": ""
+}

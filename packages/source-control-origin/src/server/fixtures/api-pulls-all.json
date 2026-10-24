@@ -1,0 +1,183 @@
+{
+  "pullRequests": [
+    {
+      "id": "pr_01m52smwmxe0ptbr2kke1bb5cn",
+      "number": "4",
+      "state": "closed",
+      "draft": false,
+      "merged": false,
+      "title": "Smoke closed",
+      "body": "closed body",
+      "head": {
+        "ref": "feat/closed",
+        "sha": "3800116b2b50a20e4dc323725c5b51a81c594df5"
+      },
+      "base": {
+        "ref": "main",
+        "sha": "d54a724ec685c7a27ee3a36d2ebabee7b033cebf"
+      },
+      "author": {
+        "user": {
+          "id": "user_01ada00000000000000000000",
+          "email": "ada@example.com",
+          "displayName": "Ada Lovelace",
+          "handle": "ada"
+        }
+      },
+      "createdAt": "2026-10-16T16:45:12.220Z",
+      "updatedAt": "2026-10-16T16:45:14.007Z",
+      "closedAt": "2026-10-16T16:45:13.975Z",
+      "mergeCommitSha": "",
+      "additions": 1,
+      "deletions": 0,
+      "changedFiles": 1,
+      "labels": [],
+      "webUrl": "https://cursor.com/codebase/ada/demo/pull/4",
+      "version": {
+        "number": "1",
+        "headSha": "3800116b2b50a20e4dc323725c5b51a81c594df5",
+        "baseSha": "d54a724ec685c7a27ee3a36d2ebabee7b033cebf",
+        "createdAt": "2026-10-16T16:45:12.228Z",
+        "potentialMergeCommit": {
+          "state": "prepared",
+          "sha": "923aa6ae57410631dacb8937024dce8d1230305b",
+          "baseSha": "d54a724ec685c7a27ee3a36d2ebabee7b033cebf"
+        }
+      }
+    },
+    {
+      "id": "pr_01m52smtkyfx9tzvrba0zf6hkk",
+      "number": "3",
+      "state": "closed",
+      "draft": false,
+      "merged": true,
+      "title": "Smoke merged",
+      "body": "merged body",
+      "head": {
+        "ref": "feat/merged",
+        "sha": "3d5b26766d36913f9f4ee9e92fc86f95a2f4b19c"
+      },
+      "base": {
+        "ref": "main",
+        "sha": "d54a724ec685c7a27ee3a36d2ebabee7b033cebf"
+      },
+      "author": {
+        "user": {
+          "id": "user_01ada00000000000000000000",
+          "email": "ada@example.com",
+          "displayName": "Ada Lovelace",
+          "handle": "ada"
+        }
+      },
+      "createdAt": "2026-10-16T16:45:10.141Z",
+      "updatedAt": "2026-10-16T16:45:13.071Z",
+      "mergedAt": "2026-10-16T16:45:13.049Z",
+      "mergeCommitSha": "be71b0b72eb14bfb59238a34edb185d006422ef6",
+      "additions": 1,
+      "deletions": 0,
+      "changedFiles": 1,
+      "labels": [],
+      "webUrl": "https://cursor.com/codebase/ada/demo/pull/3",
+      "version": {
+        "number": "1",
+        "headSha": "3d5b26766d36913f9f4ee9e92fc86f95a2f4b19c",
+        "baseSha": "d54a724ec685c7a27ee3a36d2ebabee7b033cebf",
+        "createdAt": "2026-10-16T16:45:10.148Z",
+        "potentialMergeCommit": {
+          "state": "prepared",
+          "sha": "17b706fa8eb6c892dbc6b33024c759a797ab656b",
+          "baseSha": "d54a724ec685c7a27ee3a36d2ebabee7b033cebf"
+        }
+      }
+    },
+    {
+      "id": "pr_01m52s4qg5e29rn4gpwb786jks",
+      "number": "2",
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "title": "Smoke draft (edited)",
+      "body": "draft body",
+      "head": {
+        "ref": "feat/draft",
+        "sha": "ad87ba5dd2285288b35ef0919cca3a875f476575"
+      },
+      "base": {
+        "ref": "main",
+        "sha": "d54a724ec685c7a27ee3a36d2ebabee7b033cebf"
+      },
+      "author": {
+        "user": {
+          "id": "user_01ada00000000000000000000",
+          "email": "ada@example.com",
+          "displayName": "Ada Lovelace",
+          "handle": "ada"
+        }
+      },
+      "createdAt": "2026-10-16T16:36:22.660Z",
+      "updatedAt": "2026-10-16T16:40:17.922Z",
+      "mergeCommitSha": "",
+      "additions": 1,
+      "deletions": 0,
+      "changedFiles": 1,
+      "labels": [],
+      "webUrl": "https://cursor.com/codebase/ada/demo/pull/2",
+      "version": {
+        "number": "1",
+        "headSha": "ad87ba5dd2285288b35ef0919cca3a875f476575",
+        "baseSha": "d54a724ec685c7a27ee3a36d2ebabee7b033cebf",
+        "createdAt": "2026-10-16T16:36:22.666Z",
+        "potentialMergeCommit": {
+          "state": "prepared",
+          "sha": "c0ae3798148332be0e357e39870c26e948a732db",
+          "baseSha": "d54a724ec685c7a27ee3a36d2ebabee7b033cebf"
+        }
+      }
+    },
+    {
+      "id": "pr_01m52s0559fqxsq5fz74j78t8z",
+      "number": "1",
+      "state": "open",
+      "draft": false,
+      "merged": false,
+      "title": "Smoke PR one",
+      "body": "body text\n",
+      "head": {
+        "ref": "feat/one",
+        "sha": "742e3e59c256e0d6205943cce4d88b5ba3279683"
+      },
+      "base": {
+        "ref": "main",
+        "sha": "d54a724ec685c7a27ee3a36d2ebabee7b033cebf"
+      },
+      "author": {
+        "user": {
+          "id": "user_01ada00000000000000000000",
+          "email": "ada@example.com",
+          "displayName": "Ada Lovelace",
+          "handle": "ada"
+        }
+      },
+      "createdAt": "2026-10-16T16:33:52.809Z",
+      "updatedAt": "2026-10-16T16:33:52.809Z",
+      "mergeCommitSha": "",
+      "additions": 1,
+      "deletions": 0,
+      "changedFiles": 1,
+      "labels": [],
+      "webUrl": "https://cursor.com/codebase/ada/demo/pull/1",
+      "version": {
+        "number": "1",
+        "headSha": "742e3e59c256e0d6205943cce4d88b5ba3279683",
+        "baseSha": "d54a724ec685c7a27ee3a36d2ebabee7b033cebf",
+        "createdAt": "2026-10-16T16:33:52.814Z",
+        "potentialMergeCommit": {
+          "state": "prepared",
+          "sha": "e5b61bef27a96508066b0cb1659a4a0285ba549a",
+          "baseSha": "d54a724ec685c7a27ee3a36d2ebabee7b033cebf"
+        }
+      }
+    }
+  ],
+  "nextPageToken": ""
+}

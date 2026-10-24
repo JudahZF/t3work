@@ -272,7 +272,7 @@ export function ReviewThreadCard({
                   <PullRequestReactionBar
                     className="ml-auto justify-end"
                     reactions={comment.reactions ?? []}
-                    canReact={canReact}
+                    canReact={canReact && comment.canReact !== false}
                     subjectId={comment.id}
                     environmentId={environmentId}
                     reference={reference}

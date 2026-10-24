@@ -1,0 +1,20 @@
+{
+  "id": "r_01m52rzk0pfnn9eqkgt7pq2mat",
+  "name": "demo",
+  "fullName": "ada/demo",
+  "defaultBranch": "main",
+  "createdAt": "2026-10-16T16:33:34.343Z",
+  "updatedAt": "2026-10-16T16:45:13.270Z",
+  "pushedAt": "2026-10-16T16:45:12.973Z",
+  "owner": {
+    "slug": "ada",
+    "id": "ns_01m3s1c460e4ftz6x5ff46ayk7",
+    "type": "user"
+  },
+  "cloneUrl": "https://origin.cursor.com/ada/demo.git",
+  "visibility": "private",
+  "allowMergeCommit": true,
+  "allowSquashMerge": true,
+  "deleteBranchOnMerge": false,
+  "webUrl": "https://cursor.com/codebase/ada/demo"
+}

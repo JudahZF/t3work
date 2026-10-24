@@ -15,6 +15,7 @@ import * as Forgejo from "@t3tools/source-control-forgejo/client/definition";
 import * as GitCafe from "@t3tools/source-control-gitcafe/client/definition";
 import * as GitHub from "@t3tools/source-control-github/client/definition";
 import * as GitLab from "@t3tools/source-control-gitlab/client/definition";
+import * as Origin from "@t3tools/source-control-origin/client/definition";
 
 /**
  * GitHub comes first because a repository that has not reported its host yet reads as GitHub,
@@ -29,6 +30,7 @@ const BUILT_IN_SOURCE_CONTROL_CLIENTS = [
   Forgejo.definition,
   Bitbucket.definition,
   AzureDevOps.definition,
+  Origin.definition,
 ];
 
 export const sourceControlClients = makeSourceControlClientRegistry(

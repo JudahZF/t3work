@@ -4,6 +4,7 @@ import {
   type PullRequestReviewVerdict,
   type RepositoryIdentity,
   SourceControlProviderKind,
+  type SourceControlRepositoryVisibility,
 } from "@t3tools/contracts";
 import type { ChangeRequestLink } from "@t3tools/shared/changeRequestUrl";
 import * as Schema from "effect/Schema";
@@ -44,6 +45,8 @@ export interface SourceControlClientDefinition {
   readonly publishDescription: string;
   readonly publishHost: (signedInHost: string | null) => string;
   readonly newRepositoryOwner: (account: string | null) => { readonly owner: string | null } | null;
+  /** The visibilities a published repository can have here. Absent means private and public. */
+  readonly publishVisibilities?: ReadonlyArray<SourceControlRepositoryVisibility>;
   readonly defaultCloneTransport: "https" | "ssh";
   readonly changeRequestUrl: (input: ChangeRequestUrlInput) => string | null;
   /**

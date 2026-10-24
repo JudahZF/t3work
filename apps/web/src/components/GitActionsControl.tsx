@@ -187,6 +187,21 @@ const PUBLISH_PROVIDER_OPTIONS = sourceControlClients.definitions.map((definitio
   Icon: sourceControlIcon(definition),
 }));
 
+const PUBLISH_VISIBILITY_OPTIONS = [
+  {
+    value: "private",
+    label: "Private",
+    description: "Only invited people",
+    Icon: LockIcon,
+  },
+  {
+    value: "public",
+    label: "Public",
+    description: "Anyone on the web",
+    Icon: GlobeIcon,
+  },
+] as const;
+
 function publishProviderOption(provider: SourceControlProviderKind) {
   return (
     PUBLISH_PROVIDER_OPTIONS.find((option) => option.value === provider) ??
@@ -535,6 +550,16 @@ function PublishRepositoryDialog(props: PublishRepositoryDialogProps) {
       )?.auth.host ?? Option.none(),
     ),
   );
+  const publishVisibilityOptions = PUBLISH_VISIBILITY_OPTIONS.filter(
+    (option) =>
+      currentPublishProvider.definition.publishVisibilities?.includes(option.value) ?? true,
+  );
+  // A host that cannot create the chosen visibility publishes with the first one it can.
+  const effectivePublishVisibility = publishVisibilityOptions.some(
+    (option) => option.value === publishVisibility,
+  )
+    ? publishVisibility
+    : (publishVisibilityOptions[0]?.value ?? publishVisibility);
   const publishPathPlaceholder = currentPublishProvider.pathPlaceholder;
   const publishProviderLabel = currentPublishProvider.label;
   const publishWizardSteps = ["Provider", "Repository", "Summary"] as const;
@@ -565,7 +590,7 @@ function PublishRepositoryDialog(props: PublishRepositoryDialogProps) {
       const result = await publishRepositoryAction.run({
         provider: publishProvider,
         repository: publishRepository.trim(),
-        visibility: publishVisibility,
+        visibility: effectivePublishVisibility,
         remoteName: publishRemoteName.trim() || "origin",
         protocol: publishProtocol,
       });
@@ -742,29 +767,19 @@ function PublishRepositoryDialog(props: PublishRepositoryDialogProps) {
                 Visibility
               </span>
               <RadioGroup
-                value={publishVisibility}
+                value={effectivePublishVisibility}
                 onValueChange={(value) =>
                   setPublishVisibility(value as SourceControlRepositoryVisibility)
                 }
                 aria-labelledby="publish-visibility-cards-label"
                 disabled={publishRepositoryAction.isPending}
-                className="grid grid-cols-2"
+                className={cn(
+                  "grid",
+                  publishVisibilityOptions.length > 1 ? "grid-cols-2" : "grid-cols-1",
+                )}
               >
-                {[
-                  {
-                    value: "private" as const,
-                    label: "Private",
-                    description: "Only invited people",
-                    Icon: LockIcon,
-                  },
-                  {
-                    value: "public" as const,
-                    label: "Public",
-                    description: "Anyone on the web",
-                    Icon: GlobeIcon,
-                  },
-                ].map((option) => {
-                  const isSelected = publishVisibility === option.value;
+                {publishVisibilityOptions.map((option) => {
+                  const isSelected = effectivePublishVisibility === option.value;
                   return (
                     <RadioPrimitive.Root
                       key={option.value}

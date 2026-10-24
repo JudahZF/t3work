@@ -28,6 +28,7 @@ import * as GitLabPullRequestCli from "@t3tools/source-control-gitlab/server/Git
 import * as ForgejoCli from "@t3tools/source-control-forgejo/server/ForgejoCli";
 import * as GitCafeApi from "@t3tools/source-control-gitcafe/server/GitCafeApi";
 import * as GitCafeCredentials from "@t3tools/source-control-gitcafe/server/GitCafeCredentials";
+import * as OriginCli from "@t3tools/source-control-origin/server/OriginCli";
 import * as ForgejoSourceControlProvider from "@t3tools/source-control-forgejo/server/ForgejoSourceControlProvider";
 import * as SourceControlDiscovery from "./SourceControlDiscovery.ts";
 import * as SourceControlProviderRegistry from "./SourceControlProviderRegistry.ts";
@@ -64,6 +65,13 @@ const layerSourceControlProviderRegistryTest = (input: {
         Layer.mock(GitCafeApi.GitCafeApi)({}),
         Layer.mock(GitCafeCredentials.GitCafeCredentials)({
           cliEnv: () => Effect.succeed({}),
+        }),
+        // Origin names a signed-in account by its namespace, read once auth succeeds.
+        Layer.mock(OriginCli.OriginCli)({
+          api: () =>
+            Effect.succeed(
+              encodeJson({ namespaces: [{ namespace: { slug: "origin-user", type: "user" } }] }),
+            ),
         }),
         Layer.mock(VcsDriverRegistry.VcsDriverRegistry)({}),
         Layer.mock(VcsProcess.VcsProcess)(input.process),
@@ -152,6 +160,17 @@ Logged in to gitlab.com as gitlab-user
       ) {
         return Effect.succeed(processOutput("azure-user@example.com\n"));
       }
+      if (input.command === "origin" && input.args.join(" ") === "auth status --json") {
+        return Effect.succeed(
+          processOutput(
+            encodeJson({
+              authenticated: true,
+              tokenValid: true,
+              account: { email: "o@example.com" },
+            }),
+          ),
+        );
+      }
       if (input.command === "cafe" && input.args.slice(-3).join(" ") === "auth status --json") {
         return Effect.succeed(
           processOutput(
@@ -238,6 +257,12 @@ Logged in to gitlab.com as gitlab-user
           kind: SourceControlProviderKind.make("gitcafe"),
           auth: "authenticated",
           account: Option.some("cafe-user"),
+          detail: Option.none(),
+        },
+        {
+          kind: SourceControlProviderKind.make("cursor-origin"),
+          auth: "authenticated",
+          account: Option.some("origin-user"),
           detail: Option.none(),
         },
       ],

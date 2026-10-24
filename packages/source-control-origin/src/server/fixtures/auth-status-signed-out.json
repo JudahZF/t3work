@@ -1,0 +1,4 @@
+{
+  "authenticated": false,
+  "reason": "Not logged in. Run `origin auth login` to sign in."
+}

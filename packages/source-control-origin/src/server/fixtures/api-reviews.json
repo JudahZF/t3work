@@ -1,0 +1,56 @@
+{
+  "reviews": [
+    {
+      "id": "rev_01m52s0kvpef5v76p5pttjn6v1",
+      "author": {
+        "user": {
+          "id": "user_01ada00000000000000000000",
+          "email": "ada@example.com",
+          "displayName": "Ada Lovelace",
+          "handle": "ada"
+        }
+      },
+      "verdict": "comment",
+      "body": "A review comment",
+      "submittedAt": "2026-10-16T16:34:07.858Z",
+      "pullRequestVersion": {
+        "number": "1",
+        "headSha": "742e3e59c256e0d6205943cce4d88b5ba3279683",
+        "baseSha": "d54a724ec685c7a27ee3a36d2ebabee7b033cebf"
+      }
+    },
+    {
+      "id": "rev_01m52t6a1netxr7bnxfr0pap5v",
+      "author": {
+        "user": {
+          "id": "user_01ada00000000000000000000",
+          "email": "ada@example.com",
+          "displayName": "Ada Lovelace",
+          "handle": "ada"
+        }
+      },
+      "verdict": "comment",
+      "body": "looks fine",
+      "submittedAt": "2026-10-16T16:54:42.993Z",
+      "pullRequestVersion": {
+        "number": "1",
+        "headSha": "742e3e59c256e0d6205943cce4d88b5ba3279683",
+        "baseSha": "d54a724ec685c7a27ee3a36d2ebabee7b033cebf"
+      }
+    }
+  ],
+  "pullRequest": {
+    "id": "pr_01m52s0559fqxsq5fz74j78t8z",
+    "number": "1",
+    "repository": {
+      "id": "r_01m52rzk0pfnn9eqkgt7pq2mat",
+      "name": "demo",
+      "owner": {
+        "slug": "ada",
+        "id": "ns_01m3s1c460e4ftz6x5ff46ayk7",
+        "type": "user"
+      }
+    }
+  },
+  "nextPageToken": ""
+}

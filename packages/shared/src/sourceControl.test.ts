@@ -24,6 +24,24 @@ describe("detectSourceControlProviderFromRemoteUrl", () => {
     });
   });
 
+  it("detects Cursor Origin by its git host only", () => {
+    for (const remote of [
+      "git@origin.cursor.com:owner/repo.git",
+      "ssh://git@origin.cursor.com/owner/repo.git",
+      "https://origin.cursor.com/owner/repo.git",
+    ]) {
+      expect(detectSourceControlProviderFromRemoteUrl(remote)).toEqual({
+        kind: "cursor-origin",
+        name: "Cursor Origin",
+        baseUrl: "https://origin.cursor.com",
+      });
+    }
+    // cursor.com serves Origin's web pages, not git.
+    expect(
+      detectSourceControlProviderFromRemoteUrl("https://cursor.com/owner/repo.git")?.kind,
+    ).toBe("unknown");
+  });
+
   it("detects Azure DevOps SSH remotes", () => {
     expect(
       detectSourceControlProviderFromRemoteUrl("git@ssh.dev.azure.com:v3/org/project/repo")?.kind,

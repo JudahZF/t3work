@@ -1,0 +1,13 @@
+{
+  "namespaces": [
+    {
+      "namespace": {
+        "slug": "ada",
+        "id": "ns_01m3s1c460e4ftz6x5ff46ayk7",
+        "type": "user"
+      },
+      "viewerCanCreateRepositories": true
+    }
+  ],
+  "nextPageToken": ""
+}

@@ -28,6 +28,11 @@ export function parseChangeRequestUrl(targetUrl: string): ChangeRequestLink | nu
   if (url.protocol !== "https:" && url.protocol !== "http:") return null;
   const host = url.hostname.toLowerCase();
 
+  // Origin's pull request pages are on cursor.com; their repository lives on the git host.
+  if (host === "cursor.com" || host === "www.cursor.com") {
+    const match = /^\/codebase\/([^/]+\/[^/]+)\/pull\/(\d+)(?:\/|$)/u.exec(url.pathname);
+    return claim("origin.cursor.com", match);
+  }
   if (host === "git.cafe" || host === "staging.git.cafe") {
     const match = /^\/([^/]+\/[^/]+)\/pulls\/(\d+)(?:\/|$)/u.exec(url.pathname);
     if (match) return claim(host, match);
@@ -90,6 +95,8 @@ export function changeRequestUrlFor(
       return `https://${host}/${repository}/pull/${number}`;
     case "gitcafe":
       return `https://${host}/${repository}/pulls/${number}`;
+    case "cursor-origin":
+      return `https://cursor.com/codebase/${repository}/pull/${number}`;
     case "forgejo":
       return `${remoteWebOrigin(host, remoteUrl)}/${repository}/pulls/${number}`;
     case "gitlab":

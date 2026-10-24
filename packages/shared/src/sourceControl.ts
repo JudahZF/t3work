@@ -9,6 +9,7 @@ export interface ChangeRequestPresentation {
     | "azure-devops"
     | "bitbucket"
     | "gitcafe"
+    | "cursor-origin"
     | "change-request";
   readonly providerName: string;
   readonly shortName: string;
@@ -89,6 +90,17 @@ const GITCAFE_CHANGE_REQUEST_PRESENTATION: ChangeRequestPresentation = {
   urlExample: "https://git.cafe/owner/repo/pulls/42",
 };
 
+const CURSOR_ORIGIN_CHANGE_REQUEST_PRESENTATION: ChangeRequestPresentation = {
+  icon: "cursor-origin",
+  providerName: "Cursor Origin",
+  shortName: "PR",
+  longName: "pull request",
+  pluralLongName: "pull requests",
+  providerLongName: "Cursor Origin pull request",
+  checkoutCommandExample: "origin pr checkout 123",
+  urlExample: "https://cursor.com/codebase/owner/repo/pull/42",
+};
+
 const GENERIC_CHANGE_REQUEST_PRESENTATION: ChangeRequestPresentation = {
   icon: "change-request",
   providerName: "source control",
@@ -116,6 +128,8 @@ function resolveChangeRequestPresentation(
       return BITBUCKET_CHANGE_REQUEST_PRESENTATION;
     case "gitcafe":
       return GITCAFE_CHANGE_REQUEST_PRESENTATION;
+    case "cursor-origin":
+      return CURSOR_ORIGIN_CHANGE_REQUEST_PRESENTATION;
     default:
       return GENERIC_CHANGE_REQUEST_PRESENTATION;
   }
@@ -204,6 +218,11 @@ function isGitCafeHost(host: string): boolean {
   return host === "git.cafe" || host === "staging.git.cafe";
 }
 
+/** Origin's git host. Its web pages live on `cursor.com`, which is not a git remote. */
+function isCursorOriginHost(host: string): boolean {
+  return host === "origin.cursor.com";
+}
+
 function isBitbucketHost(host: string): boolean {
   return host === "bitbucket.org" || hasDnsLabel(host, "bitbucket");
 }
@@ -221,6 +240,14 @@ export function detectSourceControlProviderFromRemoteUrl(
     return {
       kind: SourceControlProviderKind.make("gitcafe"),
       name: "GitCafe",
+      baseUrl: toBaseUrl(hostname),
+    };
+  }
+
+  if (isCursorOriginHost(hostname)) {
+    return {
+      kind: SourceControlProviderKind.make("cursor-origin"),
+      name: "Cursor Origin",
       baseUrl: toBaseUrl(hostname),
     };
   }

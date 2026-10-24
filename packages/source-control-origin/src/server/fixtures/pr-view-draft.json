@@ -1,0 +1,12 @@
+{
+  "number": 2,
+  "title": "Smoke draft (edited)",
+  "headRef": "feat/draft",
+  "baseRef": "main",
+  "status": "draft",
+  "url": "https://cursor.com/codebase/ada/demo/pull/2",
+  "headSha": "ad87ba5dd2285288b35ef0919cca3a875f476575",
+  "updatedAt": "2026-10-16T16:40:17Z",
+  "closedAt": null,
+  "mergedAt": null
+}

@@ -1,0 +1,120 @@
+{
+  "pullRequests": [
+    {
+      "id": "pr_01m52vv088ewa894k5q5tkanh4",
+      "number": "2",
+      "state": "open",
+      "draft": false,
+      "merged": false,
+      "title": "Layer two",
+      "body": "second",
+      "head": {
+        "ref": "layer2",
+        "sha": "8e4cc732193a43b2ddcc6f9cf7365fc275b9ec5f"
+      },
+      "base": {
+        "ref": "layer1",
+        "sha": "7ef929f1075e24dad636fb349d4fddbcc2bd16b7"
+      },
+      "author": {
+        "user": {
+          "id": "user_01ada00000000000000000000",
+          "email": "ada@example.com",
+          "displayName": "Ada Lovelace",
+          "handle": "ada"
+        }
+      },
+      "createdAt": "2026-10-16T17:23:29.671Z",
+      "updatedAt": "2026-10-16T17:23:29.687Z",
+      "mergeCommitSha": "",
+      "additions": 1,
+      "deletions": 0,
+      "changedFiles": 1,
+      "labels": [
+        {
+          "id": "lbl_01m52vvx7xfq5apepka4x3abs0",
+          "name": "bug",
+          "color": "d73a4a",
+          "description": "Something broken"
+        }
+      ],
+      "stack": {
+        "id": "stk_01m52vv08gf5vave6tgytf0n9q",
+        "parentPullRequest": {
+          "id": "pr_01m52vtxvkfecvya7q95ndkbeb",
+          "number": "1",
+          "repository": {
+            "id": "r_01m52vtsm1fevrp92qf0zatz1n",
+            "name": "demo",
+            "owner": {
+              "slug": "ada",
+              "id": "ns_01m3s1c460e4ftz6x5ff46ayk7",
+              "type": "user"
+            }
+          }
+        }
+      },
+      "webUrl": "https://cursor.com/codebase/ada/demo/pull/2",
+      "version": {
+        "number": "1",
+        "headSha": "8e4cc732193a43b2ddcc6f9cf7365fc275b9ec5f",
+        "baseSha": "7ef929f1075e24dad636fb349d4fddbcc2bd16b7",
+        "createdAt": "2026-10-16T17:23:29.693Z",
+        "potentialMergeCommit": {
+          "state": "prepared",
+          "sha": "95b3d3b6e7db133251db6d40693a56a319518b45",
+          "baseSha": "7ef929f1075e24dad636fb349d4fddbcc2bd16b7"
+        }
+      }
+    },
+    {
+      "id": "pr_01m52vtxvkfecvya7q95ndkbeb",
+      "number": "1",
+      "state": "closed",
+      "draft": false,
+      "merged": true,
+      "title": "Layer one",
+      "body": "first",
+      "head": {
+        "ref": "layer1",
+        "sha": "7ef929f1075e24dad636fb349d4fddbcc2bd16b7"
+      },
+      "base": {
+        "ref": "main",
+        "sha": "1e63275e8b34c354198c88e62b5a3031dc7aae9a"
+      },
+      "author": {
+        "user": {
+          "id": "user_01ada00000000000000000000",
+          "email": "ada@example.com",
+          "displayName": "Ada Lovelace",
+          "handle": "ada"
+        }
+      },
+      "createdAt": "2026-10-16T17:23:27.217Z",
+      "updatedAt": "2026-10-16T17:24:18.449Z",
+      "mergedAt": "2026-10-16T17:24:18.428Z",
+      "mergeCommitSha": "6126bcd031ea85c6b4e488037fbcd19f3cff77a4",
+      "additions": 1,
+      "deletions": 0,
+      "changedFiles": 1,
+      "labels": [],
+      "stack": {
+        "id": "stk_01m52vv08gf5vave6tgytf0n9q"
+      },
+      "webUrl": "https://cursor.com/codebase/ada/demo/pull/1",
+      "version": {
+        "number": "1",
+        "headSha": "7ef929f1075e24dad636fb349d4fddbcc2bd16b7",
+        "baseSha": "1e63275e8b34c354198c88e62b5a3031dc7aae9a",
+        "createdAt": "2026-10-16T17:23:27.225Z",
+        "potentialMergeCommit": {
+          "state": "prepared",
+          "sha": "d40a85d1a4722faea8561777eaae9026952af7bb",
+          "baseSha": "1e63275e8b34c354198c88e62b5a3031dc7aae9a"
+        }
+      }
+    }
+  ],
+  "nextPageToken": ""
+}

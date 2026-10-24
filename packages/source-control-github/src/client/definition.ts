@@ -13,12 +13,14 @@ import {
   defineSourceControlClient,
   isChangeRequestInProjectRepository,
   isChangeRequestOnProjectHost,
-  isChangeRequestPath,
 } from "@t3tools/source-control-core/client/definition";
 
 const CHECKOUT_COMMAND = /^gh\s+pr\s+checkout\s+(.+)$/i;
 const CHANGE_REQUEST_REFERENCE =
   /^https:\/\/github\.com\/[^/\s]+\/[^/\s]+\/pull\/(\d+)(?:[/?#].*)?$/i;
+
+// Any host, for GitHub Enterprise, but always exactly `/owner/repo/pull/<number>`.
+const CHANGE_REQUEST_PATH = /^\/[^/]+\/[^/]+\/pull\/\d+(?:\/|$)/;
 
 const KIND = SourceControlProviderKind.make("github");
 
@@ -83,6 +85,12 @@ export const definition = defineSourceControlClient({
     isChangeRequestInProjectRepository(KIND, identity, link),
   canReadChangeRequestOnHost: (identity, link) =>
     isChangeRequestOnProjectHost(KIND, identity, link),
-  isChangeRequestUrl: (url) => isChangeRequestPath(url, "/pull/"),
+  isChangeRequestUrl: (url) => {
+    try {
+      return CHANGE_REQUEST_PATH.test(new URL(url).pathname);
+    } catch {
+      return false;
+    }
+  },
   settings,
 });

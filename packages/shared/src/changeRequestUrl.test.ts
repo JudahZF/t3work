@@ -41,6 +41,19 @@ describe("parseChangeRequestUrl", () => {
     ).toBe("https://code.github.example.com/acme/web/pull/42");
   });
 
+  it("reads a Cursor Origin pull request page as a change request on the git host", () => {
+    const url = "https://cursor.com/codebase/Owner/Repo/pull/12/activity";
+    expect(parseChangeRequestUrl(url)).toEqual({
+      host: "origin.cursor.com",
+      repository: "owner/repo",
+      number: 12,
+    });
+    expect(parseChangeRequestUrl("https://cursor.com/docs/origin/pull/12")).toBeNull();
+    expect(changeRequestUrlFor("cursor-origin", "origin.cursor.com", "owner/repo", 12)).toBe(
+      "https://cursor.com/codebase/owner/repo/pull/12",
+    );
+  });
+
   it("reads a GitLab merge request on any host, nested groups and all", () => {
     expect(
       parseChangeRequestUrl("https://gitlab.com/t3tools/platform/t3code/-/merge_requests/42"),

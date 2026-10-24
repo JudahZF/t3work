@@ -15,6 +15,8 @@ import * as GitHubDriver from "@t3tools/source-control-github/server/driver";
 import * as GitLabCli from "@t3tools/source-control-gitlab/server/GitLabCli";
 import * as GitLabPullRequestCli from "@t3tools/source-control-gitlab/server/GitLabPullRequestCli";
 import * as GitLabDriver from "@t3tools/source-control-gitlab/server/driver";
+import * as OriginCli from "@t3tools/source-control-origin/server/OriginCli";
+import * as OriginDriver from "@t3tools/source-control-origin/server/driver";
 import type { SourceControlDriver } from "@t3tools/source-control-core/server/driver";
 import * as Layer from "effect/Layer";
 
@@ -27,6 +29,7 @@ const drivers = [
   BitbucketDriver.driver,
   ForgejoDriver.driver,
   GitCafeDriver.driver,
+  OriginDriver.driver,
 ];
 
 export type BuiltInSourceControlDriversEnv =
@@ -45,4 +48,5 @@ export const layer = Layer.mergeAll(
   ForgejoCli.layer,
   GitCafeApi.layer.pipe(Layer.provideMerge(GitCafeCredentials.layer)),
   GitLabPullRequestCli.layer.pipe(Layer.provideMerge(GitLabCli.layer)),
+  OriginCli.layer,
 ).pipe(Layer.provideMerge(ServerSourceControlHost.layer));
